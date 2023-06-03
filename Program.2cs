@@ -1,0 +1,36 @@
+﻿using System;
+
+public class PerfectNumber
+{
+    public static bool IsPerfectNumber(int num)
+    {
+        int divisorsSum = 0;
+        for (int divisor = 1; divisor < num; divisor++)
+        {
+            if (num % divisor == 0)
+            {
+                divisorsSum += divisor;
+            }
+        }
+
+        if (divisorsSum == num)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public static void Main(string[] args)
+    {
+        for (int number = 1; number <= 10000; number++)
+        {
+            if (IsPerfectNumber(number))
+            {
+                Console.WriteLine(number + " is a perfect number.");
+            }
+        }
+    }
+}
